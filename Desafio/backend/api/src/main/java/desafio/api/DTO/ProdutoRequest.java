@@ -2,8 +2,11 @@ package desafio.api.DTO;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
+@NoArgsConstructor
 public class ProdutoRequest {
 
     @NotBlank
@@ -12,12 +15,12 @@ public class ProdutoRequest {
 
     @NotNull
     @DecimalMin(value = "10.00", inclusive = true)
-    private Double preco;
+    private BigDecimal preco;
 
     @NotBlank
     @Size(min = 30, max = 255)
     private String descricao;
 
 
-    private String imagemUrl;
+    private String imagem;
 }
