@@ -20,8 +20,9 @@ import java.util.UUID;
 public class Produto {
 
     @Id
-    @Column(length = 36)
+    @Column(length = 16)
     private UUID id;
+
 
     @Column(name = "nome", length = 50)
     @Size(min = 3, max = 50)

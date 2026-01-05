@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/api/v1/produtos")
 public class ApiController {
 
     private final ApiService service;
@@ -32,7 +32,9 @@ public class ApiController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProdutoResponse criar(@Valid @RequestBody ProdutoRequest request) {
+    public ProdutoResponse criar(
+            @Valid @RequestBody ProdutoRequest request
+    ) {
         return service.criarProduto(request);
     }
 }
